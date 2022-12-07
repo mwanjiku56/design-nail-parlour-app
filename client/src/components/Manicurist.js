@@ -3,10 +3,11 @@ import React,{useState, useEffect} from 'react'
 
 function Manicurist() {
     const [manicurists, setManicurists] = useState([]);
+
     useEffect(() => {
         fetch("/manicurists")
           .then((response) => response.json())
-          .then(setManicurists);
+          .then(data => setManicurists(data))
       }, []);
       
       console.log(manicurists);

@@ -2,6 +2,8 @@ import React from 'react'
 import './Appointment.css'
 
 function Appointment() {
+
+  
   return (
     <div className='appointment-form'>
       <h1>Book Appointment</h1>
@@ -11,7 +13,7 @@ function Appointment() {
 
         <label htmlFor='date'>Date</label>
         <input type='date' name='date' value='' placeholder='Date' />
-
+              <p>Nail design </p>
         <select name='design-selection' id='desin-selection'>
           <option value='Nailart1'>Tribal design</option>
           <option value='Nailart2'>French detail</option>
@@ -19,7 +21,7 @@ function Appointment() {
           <option value='Nailart4'>Stelleto design</option>
           <option value='Nailart5'>Cofffin Design</option>
         </select>
-
+            <p>Manicurist </p>
         <select name='mani-selection' id='mani-selection'>
           <option value='Mani1'>Greg</option>
           <option value='Mani2'>Mr.Guru</option>

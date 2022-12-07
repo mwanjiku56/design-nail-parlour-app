@@ -34,7 +34,7 @@ function Navbar() {
             <li>
               <NavLink
                 exact
-                to='/manicurists'
+                to='/manicurist'
                 className={({ isActive }) =>
                   isActive ? 'link active' : 'link'
                 }
