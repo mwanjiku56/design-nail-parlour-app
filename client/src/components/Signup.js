@@ -1,12 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Signup.css";
+import {Link} from "react-router-dom"
 
-function Signup() {
-  //   const fnameRef = useRef();
-  //   const lnameRef = useRef();
-  //   const emailRef = useRef();
-  //   const genderRef = useRef();
-  //   const passwordRef = useRef();
+
+function Signup({onLogin}) {
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetch("/customers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        first_name:fname,
+        last_name:lname,
+        password,
+        email,
+        confirm_password: passwordConfirmation,
+       
+      }),
+    })
+    .then((r) => r.json())
+      .then((data) => onLogin(data));
+  }
 
   return (
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
@@ -16,18 +39,33 @@ function Signup() {
             <div class="card">
               <div class="card-body p-5">
                 <h2 class="text-uppercase text-center mb-5">
-                  Create an account
+                  Sign Up
                 </h2>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div class="form-outline mb-4">
                     <input
                       type="text"
                       id="form3Example1cg"
                       class="form-control form-control-lg"
+                      value={fname}
+                      onChange={(e) => setFname(e.target.value)}
                     />
                     <label class="form-label" for="form3Example1cg">
-                      Your Name
+                      First Name
+                    </label>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input
+                      type="text"
+                      id="form3Example1cg"
+                      class="form-control form-control-lg"
+                      value={lname}
+                      onChange={(e) => setLname(e.target.value)}
+                    />
+                    <label class="form-label" for="form3Example1cg">
+                      Last Name
                     </label>
                   </div>
 
@@ -36,6 +74,8 @@ function Signup() {
                       type="email"
                       id="form3Example3cg"
                       class="form-control form-control-lg"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                     <label class="form-label" for="form3Example3cg">
                       Your Email
@@ -47,6 +87,9 @@ function Signup() {
                       type="password"
                       id="form3Example4cg"
                       class="form-control form-control-lg"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      minLength={8}
                     />
                     <label class="form-label" for="form3Example4cg">
                       Password
@@ -58,9 +101,11 @@ function Signup() {
                       type="password"
                       id="form3Example4cdg"
                       class="form-control form-control-lg"
+                      value={passwordConfirmation}
+                      onChange={(e) => setPasswordConfirmation(e.target.value)}
                     />
                     <label class="form-label" for="form3Example4cdg">
-                      Repeat your password
+                      Confirm your password
                     </label>
                   </div>
 
@@ -84,17 +129,18 @@ function Signup() {
                       type="button"
                       class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
                     >
-                      Register
+                      Create Account
                     </button>
                   </div>
 
                   <p class="text-center text-muted mt-5 mb-0">
-                    Have already an account?{" "}
+                    Have an account already?{" "}
                     <a href="#!" class="fw-bold text-body">
-                      <u>Login here</u>
+                    <Link to='/login' id='create-acc'> Log In</Link>
                     </a>
                   </p>
                 </form>
+                
               </div>
             </div>
           </div>
