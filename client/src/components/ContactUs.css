@@ -1,0 +1,25 @@
+#us{
+    color: #1d2422;
+    font-size: 50px;
+    text-align: center;
+    margin: 50px;
+}
+.row{
+    background-color: #3aeabe;
+    color: rgb(30, 25, 25);
+    margin: 32px;
+    padding: 18px;
+    border-radius: 7px;
+    font-size: 24px;
+}
+.review button {
+    border: none;
+    font-size: 25px;
+    padding: 12px 20px;
+    background-color: #0ea685;
+    margin-top: 30px;
+  }
+  .review button:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+  }
