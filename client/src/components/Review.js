@@ -8,7 +8,7 @@ function Review() {
       <form>
         <label htmlFor="name"></label>
         <input type="text" name="review" placeholder="review" />
-
+        
         <button type='submit'>Submit</button>
       </form>
     </div>

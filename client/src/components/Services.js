@@ -7,7 +7,7 @@ function Services() {
     <>
       <h1 id="title">Our Services</h1>
       <div className="services">
-        <div class="card">
+        <div className="card">
           <img src={tribal} alt="nail" />
           <h4>Tribal design</h4>
           <h4>Done by Greg</h4>
@@ -15,7 +15,7 @@ function Services() {
         </div>
       </div>
       <div className="services">
-        <div class="card">
+        <div className="card">
           <img src={tribal} alt="nail" />
           <h4>Tribal design</h4>
           <h4>Done by Greg</h4>
@@ -23,7 +23,7 @@ function Services() {
         </div>
       </div>
       <div className="services">
-        <div class="card">
+        <div className="card">
           <img src={tribal} alt="nail" />
           <h4>Tribal design</h4>
           <h4>Done by Greg</h4>
@@ -31,7 +31,7 @@ function Services() {
         </div>
       </div>
       <div className="services">
-        <div class="card">
+        <div className="card">
           <img src={tribal} alt="nail" />
           <h4>Tribal design</h4>
           <h4>Done by Greg</h4>
@@ -39,7 +39,7 @@ function Services() {
         </div>
       </div>
       <div className="services">
-        <div class="card">
+        <div className="card">
           <img src={tribal} alt="nail" />
           <h4>Tribal design</h4>
           <h4>Done by Greg</h4>
@@ -47,7 +47,7 @@ function Services() {
         </div>
       </div>
       <div className="services">
-        <div class="card">
+        <div className="card">
           <img src={tribal} alt="nail" />
           <h4>Tribal design</h4>
           <h4>Done by Greg</h4>
@@ -55,7 +55,7 @@ function Services() {
         </div>
       </div>
       <div className="services">
-        <div class="card">
+        <div className="card">
           <img src={tribal} alt="nail" />
           <h4>Tribal design</h4>
           <h4>Done by Greg</h4>
@@ -63,14 +63,13 @@ function Services() {
         </div>
       </div>
       <div className="services">
-        <div class="card">
+        <div className="card">
           <img src={tribal} alt="nail" />
           <h4>Tribal design</h4>
           <h4>Done by Greg</h4>
           <h4>Price: $ 200</h4>
         </div>
       </div>
-      
     </>
   );
 }
