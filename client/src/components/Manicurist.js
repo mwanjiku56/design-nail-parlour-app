@@ -15,7 +15,7 @@ function Manicurist() {
       <table className="table">
         <thead className="thead-dark">
           <tr>
-            <th scope="col">App ID</th>
+            <th scope="col">ID</th>
             <th scope="col">Name</th>
             <th scope="col">Job Title</th>
           </tr>
