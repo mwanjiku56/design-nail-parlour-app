@@ -10,7 +10,7 @@ function Appointment() {
           .then(data => setAppoint(data))
       }, []);
       
-      console.log(appoint);
+     
 
 
 
@@ -44,6 +44,36 @@ function Appointment() {
         <button type='submit'>Book</button>
         <button type='submit'>Cancel</button>
       </form>
+      <div className="trainers-container">
+    
+
+      <table className="table">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Nail Design</th>
+            <th scope="col">Manicurist ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {appoint.length < 1 ? (
+            <tr>
+              <td colSpan="3">No Appointment Available</td>
+            </tr>
+          ) : (
+            appoint.map((data) => (
+              <tr>
+                <td key={data.customer_id}>{data.id}</td>
+                <td>{data.date}</td>
+                <td>{data.nail_design}</td>
+                <td>{data.manicurist_id}</td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+    </div>
     </div>
   )
 }
