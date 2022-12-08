@@ -3,9 +3,8 @@ class CustomersController < ApplicationController
         render json: Customer.all 
     end
     def create
-        user = Customer.create!(customer_params)
-          session[:user_id] = user.id
-          render json: user, status: :created
+        customer = Customer.create!(customer_params)
+        render json: customer, status: :created
       end
     private
     def find_customer
@@ -13,6 +12,6 @@ class CustomersController < ApplicationController
     end
 
     def customer_params
-    params.permit(:first_name, :last_name, :email, :password, :confirm_password)
+    params.permit(:first_name, :last_name, :email, :password, :confirm_password, :manicurist_id)
     end
 end
