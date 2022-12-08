@@ -1,7 +1,18 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './Appointment.css'
 
 function Appointment() {
+  const [appoint, setAppoint] = useState([]);
+
+    useEffect(() => {
+        fetch("/appointments")
+          .then((response) => response.json())
+          .then(data => setAppoint(data))
+      }, []);
+      
+      console.log(appoint);
+
+
 
   
   return (
