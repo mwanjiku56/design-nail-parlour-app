@@ -3,4 +3,5 @@ class Manicurist < ApplicationRecord
     has_many :customers, through: :appointments
 
     validates :name, presence: true
+
 end
