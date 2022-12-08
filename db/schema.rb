@@ -10,28 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_06_111638) do
+ActiveRecord::Schema.define(version: 2022_12_08_155530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
     t.integer "customer_id"
-    t.string "customer_name"
     t.string "nail_design"
     t.string "date"
-    t.string "manicurist_id"
+    t.integer "manicurist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
-    t.string "last_name"
     t.string "email"
     t.string "password"
-    t.string "confirm_password"
-    t.integer "manicurist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,14 +35,14 @@ ActiveRecord::Schema.define(version: 2022_12_06_111638) do
   create_table "manicurists", force: :cascade do |t|
     t.string "name"
     t.string "job_title"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "review_note"
+    t.text "review_note"
     t.integer "customer_id"
+    t.integer "appointment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
