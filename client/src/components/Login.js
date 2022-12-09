@@ -27,7 +27,7 @@ function Login({ onLogin }) {
       if (r.ok) {
         r.json().then((user) => {
           setSuccess(user);
-          navigate("/appointment");
+          navigate("/");
         });
       } else {
         r.json().then((err) => {
