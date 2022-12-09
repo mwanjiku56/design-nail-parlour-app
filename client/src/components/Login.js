@@ -27,7 +27,7 @@ function Login({ onLogin }) {
       if (r.ok) {
         r.json().then((user) => {
           setSuccess(user);
-          navigate("/");
+          navigate("/appointments");
         });
       } else {
         r.json().then((err) => {
@@ -39,8 +39,8 @@ function Login({ onLogin }) {
   }
   return (
     <div className="container">
-    <div className="row">
-      <div className="card bg-light col-12">
+      <div className="row">
+        <div className="card bg-light col-12">
           <article className="card-body mx-auto">
             <h4 className="card-title mt-3 text-center">Login</h4>
           </article>
@@ -97,9 +97,6 @@ function Login({ onLogin }) {
         </div>
       </div>
     </div>
-
-
-
   );
 }
 

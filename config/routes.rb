@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :customers, only:[:index, :show, :create]
 
   post "/signup", to: "customers#create"
+  post "/session", to: "customers#show"
 
 
   post "/login", to: "sessions#create"

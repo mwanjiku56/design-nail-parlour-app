@@ -4,13 +4,19 @@
     text-align: center;
     margin: 50px;
 }
-.row{
+#row{
     background-color: #0ea685;
     color: rgb(30, 25, 25);
     margin: 32px;
     padding: 18px;
     border-radius: 7px;
     font-size: 24px;
+}
+.row{
+  margin: 15px;
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 20px;
 }
 .review button {
     border: none;

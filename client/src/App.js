@@ -8,9 +8,10 @@ import Manicurist from "./components/Manicurist";
 import Navbar from "./components/Navbar";
 import ContactUs from "./components/ContactUs";
 import Services from "./components/Services";
-import Appointment from "./components/Appointment";
+import Book from "./components/Book";
 import Appointments from "./components/Appointments";
 import Review from "./components/Review";
+import CreateAppointment from "./components/CreateAppointment";
 
 function App() {
   return (
@@ -36,10 +37,13 @@ function App() {
           <Route path="/services" element={<Services />} />
         </Routes>
         <Routes>
-          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/book" element={<Book />} />
         </Routes>
         <Routes>
           <Route path="/appointments" element={<Appointments />} />
+        </Routes>
+        <Routes>
+          <Route path="/create-appointment" element={<CreateAppointment />} />
         </Routes>
         <Routes>
           <Route path="/review" element={<Review />} />

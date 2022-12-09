@@ -14,7 +14,7 @@ function Home() {
         <p>
           Welcome to By Design Nail Parlour. This is the best nail parlour where you get all nail designs of your choice. This includes any custom design nail art which will be perfectly executed by our  Proffesional manicurist.
         </p>
-        <Link to="/appointment">
+        <Link to="/appointments">
           <button type="button">BOOK APPOINTMENT</button>
         </Link>
       </div>

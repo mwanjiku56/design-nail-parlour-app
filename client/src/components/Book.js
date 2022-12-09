@@ -30,42 +30,13 @@ function Appointment() {
         <select name="mani-selection" id="mani-selection">
           <option value="Mani1">Greg</option>
           <option value="Mani2">Mr.Guru</option>
-          <option value="Mani3">Mr.nice</option>
-          <option value="Mani4">Angie</option>
-          <option value="Mani5">Phil</option>
+          <option value="Mani3">Bob</option>
+          <option value="Mani4">mellisa</option>
+          <option value="Mani5">Mercy</option>
         </select>
 
-        <button type="submit">Book</button>
-        <button type="submit">Cancel</button>
+        <button type="submit" className="btn btn-success">Book</button>
       </form>
-      <div className="manicurist-container">
-        <table className="table">
-          <thead className="thead-dark">
-          <tr>
-              <th scope="col">Customer ID</th>
-              <th scope="col">Date</th>
-              <th scope="col">Nail Design</th>
-              <th scope="col">Manicurist ID</th>
-            </tr>
-          </thead>
-          <tbody>
-            {appoint.length < 1 ? (
-              <tr>
-                <td colSpan="3">No Appointment Available</td>
-              </tr>
-            ) : (
-              appoint.map((data) => (
-                <tr>
-                  <td key={data.customer_id}>{data.id}</td>
-                  <td>{data.date}</td>
-                  <td>{data.nail_design}</td>
-                  <td>{data.manicurist_id}</td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
     </div>
   );
 }

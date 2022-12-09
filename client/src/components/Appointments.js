@@ -7,10 +7,10 @@ import { NavLink, Link } from "react-router-dom";
 function Appointments() {
   const [appoint, setAppoint] = useState([]);
 
-  const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [success, setSuccess] = useState("");
-  const navigate = useNavigate();
+  // const [errors, setErrors] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [success, setSuccess] = useState("");
+  // const navigate = useNavigate();
 
   useEffect(() => {
     fetch("/appointments")
@@ -33,7 +33,7 @@ function Appointments() {
               <th scope="col">Nail Design</th>
               <th scope="col">Manicurist ID</th>
               <th scope="col">
-                <Link to="/create-appointment">
+                <Link to="/book">
                   <button type="submit" className="btn btn-success">
                     Book Appointment
                   </button>

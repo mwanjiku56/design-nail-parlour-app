@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
 import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
+  const [customerId, setCustomerId] = useState("");
+
+  useEffect(() => {
+    fetch("/customer-session-id").then((r) => {
+      if (r.ok) {
+        r.json().then((customerId) => setCustomerId(customerId));
+      }
+    });
+  }, []);
+
   return (
     <header>
       <div className="menubar">
@@ -54,11 +65,19 @@ function Navbar() {
             </li>
           </ul>
         </nav>
-        <Link to="/signup" id="menu-login-link">
-          <button type="button" id="menu-login-button">
-            Sign Up
-          </button>
-        </Link>
+        {customerId != null ? (
+          <Link to="/signup" id="menu-login-link">
+            <button type="button" id="menu-login-button">
+              Sign Up
+            </button>
+          </Link>
+        ) : (
+          <Link to="/logout" id="menu-login-link">
+            <button type="button" id="menu-login-button">
+              Logout
+            </button>
+          </Link>
+        )}
       </div>
     </header>
   );
