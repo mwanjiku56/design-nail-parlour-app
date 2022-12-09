@@ -22,6 +22,8 @@ This is a web application that enables a user to do several things when logged i
 To get the back end started, you need a DataBase -postgres or SQlite3 will be ok and Postman to test. Ensure you have latest Ruby version(2.7.0). Rails require Ruby. Rails is installed in form of a gem, by running (`gem install rails`gem install rails), once installed you need to start a web server using (bin/rails server). Bundle install is also run at the beginning to ensure that all the dependencies are installed.
 Command:- `bundle install`
 
+Deployed back end link: https://design-nail-parlour-app-production.up.railway.app/
+
 ## DataBase
 
 Rails is a powerful tool that helps us get most of our files by running one command. It creates the controllers, models, serializers, routes at the same time. While this is good its important to cross check that everything is as per you project layout especially the schema.
@@ -39,4 +41,6 @@ To see the application live you run the command:
 - `npm start --prefix client`: run the frontend on
   [http://localhost:4000](http://localhost:4000)
 
+
+Deployed front end link:https://nail-parlour.vercel.app/
 
