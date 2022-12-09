@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import ContactUs from "./components/ContactUs";
 import Services from "./components/Services";
 import Appointment from "./components/Appointment";
+import Appointments from "./components/Appointments";
 import Review from "./components/Review";
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/appointment" element={<Appointment />} />
+        </Routes>
+        <Routes>
+          <Route path="/appointments" element={<Appointments />} />
         </Routes>
         <Routes>
           <Route path="/review" element={<Review />} />
