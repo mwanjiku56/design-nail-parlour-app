@@ -10,7 +10,7 @@ function Manicurist() {
   }, []);
   return (
     <div className="trainers-container">
-      <h1 className="trainers-heading">Meet the Manicurist Team</h1>
+      <h1 className="trainers-heading">Best Manicurist Team</h1>
 
       <table className="table">
         <thead className="thead-dark">
@@ -26,11 +26,11 @@ function Manicurist() {
               <td colSpan="3">No Manicurist Available</td>
             </tr>
           ) : (
-            manicurists.map((app) => (
+            manicurists.map((mani) => (
               <tr>
-                <td key={app.id}>{app.id}</td>
-                <td>{app.name}</td>
-                <td>{app.job_title}</td>
+                <td key={mani.id}>{mani.id}</td>
+                <td>{mani.name}</td>
+                <td>{mani.job_title}</td>
               </tr>
             ))
           )}

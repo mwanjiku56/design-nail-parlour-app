@@ -25,7 +25,7 @@ function Appointment() {
         <label htmlFor='date'>Date</label>
         <input type='date' name='date' value='' placeholder='Date' />
               <p>Nail design </p>
-        <select name='design-selection' id='desin-selection'>
+        <select name='design-selection' id='design-selection'>
           <option value='Nailart1'>Tribal design</option>
           <option value='Nailart2'>French detail</option>
           <option value='Nailart3'>Nude colour</option>
@@ -44,7 +44,7 @@ function Appointment() {
         <button type='submit'>Book</button>
         <button type='submit'>Cancel</button>
       </form>
-      <div className="trainers-container">
+      <div className="manicurist-container">
     
 
       <table className="table">

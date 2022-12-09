@@ -5,7 +5,7 @@ import tribal from "../images/nail_art.webp";
 function Services() {
   return (
     <>
-      <h1 id="title">Our Services</h1>
+      <h1 id="title">Nail Designs</h1>
       <div className="services">
         <div className="card">
           <img src={tribal} alt="nail" />
