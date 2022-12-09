@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import "./Login.css";
 
 function Login({ onLogin }) {
-  const [fname, setFname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+  const [errors, setErrors] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
+
   function handleSubmit(e) {
     e.preventDefault();
     fetch("/login", {
@@ -18,13 +22,25 @@ function Login({ onLogin }) {
         password,
         email,
       }),
-    }).then((r) => r.json())
-    .then(onLogin);
+    }).then((r) => {
+      setIsLoading(false);
+      if (r.ok) {
+        r.json().then((user) => {
+          setSuccess(user);
+          navigate("/appointment");
+        });
+      } else {
+        r.json().then((err) => {
+          setErrors(err.errors);
+          console.log(err);
+        });
+      }
+    });
   }
   return (
     <div className="container">
-      <div className="row">
-        <div className="card bg-light col-12">
+    <div className="row">
+      <div className="card bg-light col-12">
           <article className="card-body mx-auto">
             <h4 className="card-title mt-3 text-center">Login</h4>
           </article>
@@ -81,6 +97,9 @@ function Login({ onLogin }) {
         </div>
       </div>
     </div>
+
+
+
   );
 }
 

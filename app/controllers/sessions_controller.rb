@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
-    skip_before_action :authorize, only: :create
-    
+    # skip_before_action :authorize, only: :create
+
     def create
-        customer = Customer.find_by(first_name: params[:first_name])
-        if customer&.authenticate(params[:password])
+        customer = Customer.find_by(email: params[:email])
+        if params[:password] == customer.password
           session[:customer_id] = customer.id
           render json: customer, status: :created
         else
