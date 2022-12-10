@@ -4,16 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-  const [customerId, setCustomerId] = useState("");
-
-  useEffect(() => {
-    fetch("/session")
-      .then((response) => response.json())
-      .then((data) => setCustomerId(data.id))
-      .catch((err) => {
-        console.log("29 ===>" + err);
-      });
-  }, []);
+  
 
   return (
     <header>
@@ -66,19 +57,11 @@ function Navbar() {
             </li>
           </ul>
         </nav>
-        {customerId == null ? (
-          <Link to="/signup" id="menu-login-link">
-            <button type="button" id="menu-login-button">
-              Sign Up
-            </button>
-          </Link>
-        ) : (
-          <Link to="/logout" id="menu-login-link">
-            <button type="button" id="menu-login-button">
-              Logout
-            </button>
-          </Link>
-        )}
+        <Link to="/signup" id="menu-login-link">
+          <button type="button" id="menu-login-button">
+            Sign Up
+          </button>
+        </Link>
       </div>
     </header>
   );
