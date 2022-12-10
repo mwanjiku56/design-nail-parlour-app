@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // import "./Appointment.css";
 
 function Appointments() {
   const [appoint, setAppoint] = useState([]);
   const [appointmentId, setAppointmentId] = useState("");
-  const [nailDesign, setNailDesign] = useState("");
+  /*const [nailDesign, setNailDesign] = useState("");
   const [date, setDate] = useState("");
   const [manicuristId, setManicuristId] = useState("");
   const [manicurists, setManicurists] = useState([]);
   const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+ 
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
-
+*/
   useEffect(() => {
     fetch("/appointments")
       .then((response) => response.json())
@@ -32,10 +30,22 @@ function Appointments() {
         "Content-Type": "application/json",
       },
     }).then((r) => {
-      setIsLoading(false);
       //window.location.reload(false);
     });
   }
+
+  const handleDeletes = (index, e) => {
+    e.preventDefault();
+    console.log("==========>" + index);
+    fetch("/appointments/" + index, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((r) => {
+      window.location.reload(false);
+    });
+  };
 
   return (
     <div className="row">
@@ -44,7 +54,7 @@ function Appointments() {
           <h4 className="card-title mt-3 text-center">Appointment</h4>
         </article>
 
-        <table className="table" table-stripped>
+        <table className="table stripped">
           <thead className="thead-dark">
             <tr>
               <th scope="col">Customer ID</th>
@@ -83,18 +93,12 @@ function Appointments() {
                         </Link>
                       </div>
                       <div className="col-sm-6">
-                        <form onSubmit={handleDelete}>
-                          <input
-                            type="hidden"
-                            name="appointmentId"
-                            id="appointmentId"
-                            value={data.id}
-                            onChange={(e) => setAppointmentId(data.id)}
-                          />
-                          <button type="submit" className="btn btn-danger">
-                            Delete
-                          </button>
-                        </form>
+                        <button
+                          className="btn btn-danger"
+                          onClick={(e) => handleDeletes(data.id, e)}
+                        >
+                          Delete
+                        </button>
                       </div>
                     </div>
                   </td>

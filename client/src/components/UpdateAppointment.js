@@ -14,12 +14,10 @@ function UpdateAppointment() {
   const [date, setDate] = useState("");
   const [manicuristId, setManicuristId] = useState("");
   const [manicurists, setManicurists] = useState([]);
-  const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [success, setSuccess] = useState("");
+  //const [errors, setErrors] = useState([]);
+  //const [isLoading, setIsLoading] = useState(false);
+  //const [success, setSuccess] = useState("");
   const navigate = useNavigate();
-
-  console.log("==============:::" + id);
 
   useEffect(() => {
     fetch("/session")
@@ -32,20 +30,23 @@ function UpdateAppointment() {
 
     fetch("/appointments/" + id).then((r) => {
       if (r.ok) {
-        r.json().then((appointment) => setAppointment(appointment));
-        console.log("34=========>" + appointment);
-      } else {
-        r.json().then((err) => {
-          setErrors(err.errors);
-          console.log("38=========>" + err.toString());
+        r.json().then((appointment) => {
+          setAppointment(appointment);
+          setNailDesign(appointment.nail_design);
+          setManicuristId(appointment.manicurist_id);
+          setDate(appointment.date);
         });
+      } else {
+        r.json().then((err) => {});
       }
     });
 
-    console.log(customerId.id);
     fetch("/manicurists")
       .then((response) => response.json())
-      .then((data) => setManicurists(data));
+      .then((data) => setManicurists(data))
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   if (customerId == null) return <Login onLogin={customerId} />;
@@ -53,7 +54,6 @@ function UpdateAppointment() {
   function handleSubmit(e) {
     e.preventDefault();
     var url = "/appointments/" + id;
-    console.log("54 =================>" + url);
     fetch(url, {
       method: "PATCH",
       headers: {
@@ -66,15 +66,12 @@ function UpdateAppointment() {
         manicurist_id: manicuristId,
       }),
     }).then((r) => {
-      setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => {
-          setSuccess(user);
           navigate("/appointments");
         });
       } else {
         r.json().then((err) => {
-          setErrors(err.errors);
           console.log(err);
         });
       }
@@ -99,7 +96,7 @@ function UpdateAppointment() {
                   id="date"
                   autoComplete="off"
                   className="form-control form-control-lg"
-                  value={appointment.date}
+                  value={date}
                   onChange={(e) => setDate(e.target.value)}
                 />
               </div>
@@ -112,38 +109,23 @@ function UpdateAppointment() {
                   name="nailDesign"
                   className="form-control"
                   id="nailDesign"
-                  defaultValue={appointment.nail_design}
+                  value={nailDesign}
                   required="required"
                   onChange={(e) => setNailDesign(e.target.value)}
                 >
-                  <option
-                    value="Tribal design"
-                    selected={appointment.nail_design === "Tribal design"}
-                  >
+                  <option key="Tribal design" value="Tribal design">
                     Tribal design
                   </option>
-                  <option
-                    value="French detail"
-                    selected={appointment.nail_design === "French detail"}
-                  >
+                  <option key="French detail" value="French detail">
                     French detail
                   </option>
-                  <option
-                    value="Nude colour"
-                    selected={appointment.nail_design === "Nude colour"}
-                  >
+                  <option key="Nude colour" value="Nude colour">
                     Nude colour
                   </option>
-                  <option
-                    value="Stelleto design"
-                    selected={appointment.nail_design === "Stelleto design"}
-                  >
+                  <option key="Stelleto design" value="Stelleto design">
                     Stelleto design
                   </option>
-                  <option
-                    value="Cofffin Design"
-                    selected={appointment.nail_design === "Cofffin Design"}
-                  >
+                  <option key="Cofffin Design" value="Cofffin Design">
                     Cofffin Design
                   </option>
                 </select>
@@ -155,7 +137,7 @@ function UpdateAppointment() {
               <div className="col-sm-10">
                 <select
                   name="manicuristId"
-                  defaultValue={appointment.manicurist_id}
+                  value={manicuristId}
                   className="form-control"
                   id="manicuristId"
                   required="required"
@@ -165,7 +147,9 @@ function UpdateAppointment() {
                     <option>No Manicurist Found</option>
                   ) : (
                     manicurists.map((mani) => (
-                      <option value={mani.id}>{mani.name}</option>
+                      <option key={mani.id} value={mani.id}>
+                        {mani.name}
+                      </option>
                     ))
                   )}
                 </select>

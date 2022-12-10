@@ -7,11 +7,12 @@ function Navbar() {
   const [customerId, setCustomerId] = useState("");
 
   useEffect(() => {
-    fetch("/session").then((r) => {
-      if (r.ok) {
-        r.json().then((customerId) => setCustomerId(customerId));
-      }
-    });
+    fetch("/session")
+      .then((response) => response.json())
+      .then((data) => setCustomerId(data.id))
+      .catch((err) => {
+        console.log("29 ===>" + err);
+      });
   }, []);
 
   return (
@@ -65,7 +66,7 @@ function Navbar() {
             </li>
           </ul>
         </nav>
-        {customerId != null ? (
+        {customerId == null ? (
           <Link to="/signup" id="menu-login-link">
             <button type="button" id="menu-login-button">
               Sign Up

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "../components/Login";
 
-// import "./Appointment.css     ";
 
 function CreateAppointment() {
   const [customerId, setCustomerId] = useState("");
@@ -10,8 +9,6 @@ function CreateAppointment() {
   const [date, setDate] = useState("");
   const [manicuristId, setManicuristId] = useState("");
   const [manicurists, setManicurists] = useState([]);
-  const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
@@ -45,7 +42,6 @@ function CreateAppointment() {
         manicurist_id: manicuristId,
       }),
     }).then((r) => {
-      setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => {
           setSuccess(user);
@@ -53,7 +49,6 @@ function CreateAppointment() {
         });
       } else {
         r.json().then((err) => {
-          setErrors(err.errors);
           console.log(err);
         });
       }

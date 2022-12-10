@@ -8,11 +8,11 @@ import Manicurist from "./components/Manicurist";
 import Navbar from "./components/Navbar";
 import ContactUs from "./components/ContactUs";
 import Services from "./components/Services";
-import Book from "./components/Book";
 import Appointments from "./components/Appointments";
 import Review from "./components/Review";
 import CreateAppointment from "./components/CreateAppointment";
 import UpdateAppointment from "./components/UpdateAppointment";
+import Logout from "./components/Logout";
 
 function App() {
   return (
@@ -38,9 +38,6 @@ function App() {
           <Route path="/services" element={<Services />} />
         </Routes>
         <Routes>
-          <Route path="/book" element={<Book />} />
-        </Routes>
-        <Routes>
           <Route path="/appointments" element={<Appointments />} />
         </Routes>
         <Routes>
@@ -48,6 +45,9 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/review" element={<Review />} />
+        </Routes>
+        <Routes>
+          <Route path="/logout" element={<Logout />} />
         </Routes>
         <Routes>
           <Route
