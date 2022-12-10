@@ -22,11 +22,13 @@ function UpdateAppointment() {
   console.log("==============:::" + id);
 
   useEffect(() => {
-    fetch("/session").then((r) => {
-      if (r.ok) {
-        r.json().then((customer) => setCustomerId(customer.id));
-      }
-    });
+    fetch("/session")
+      .then((response) => response.json())
+      .then((data) => setCustomerId(data.id))
+      .catch((err) => {
+        console.log("29 ===>" + err);
+        navigate("/login");
+      });
 
     fetch("/appointments/" + id).then((r) => {
       if (r.ok) {
