@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "../components/Login";
 
-// import "./Appointment.css";
+// import "./Appointment.css     ";
 
 function CreateAppointment() {
   const [customerId, setCustomerId] = useState("");
