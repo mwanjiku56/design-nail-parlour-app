@@ -20,18 +20,19 @@ class AppointmentsController < ApplicationController
     end
 
     def update
-       appointment = find_appointment 
-       Appointment.update!(appointment_params)
-       render json: appointment, status: :accepted
+       appointment = Appointment.find_by(id: params[:id])
+       if appointment
+          appointment.update(appointment_params)
+          render json: appointment
+       else
+          render json: { error: "Appointment not found" }, status: :not_found
+        end
     end
-
     def destroy
 		appointment = Appointment.find(params[:id])
 		appointment.destroy
 		render json: {}
 	end
-
-    private
     def appointment_params
         params.permit(:customer_id, :nail_design, :date, :manicurist_id)
     end

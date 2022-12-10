@@ -12,6 +12,7 @@ import Book from "./components/Book";
 import Appointments from "./components/Appointments";
 import Review from "./components/Review";
 import CreateAppointment from "./components/CreateAppointment";
+import UpdateAppointment from "./components/UpdateAppointment";
 
 function App() {
   return (
@@ -47,6 +48,12 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/review" element={<Review />} />
+        </Routes>
+        <Routes>
+          <Route
+            path="/update-appointment/:id"
+            element={<UpdateAppointment />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

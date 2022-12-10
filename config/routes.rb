@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   
   
-  resources :appointments
+  resources :appointments, only:[:index, :show, :create, :update, :destroy]
   resources :manicurists, only: [:index, :create]
   resources :reviews, only:[:index, :show, :create, :update]
   resources :customers, only:[:index, :show, :create]
 
   post "/signup", to: "customers#create"
-  post "/session", to: "customers#show"
+  get "/session", to: "customers#show"
 
 
   post "/login", to: "sessions#create"

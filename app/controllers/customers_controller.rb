@@ -10,8 +10,13 @@ class CustomersController < ApplicationController
     end
 
     def show
-        customer = Customer.find(session[:customer_id])
-        render json: customer
+        id = session[:customer_id]
+        if id == nil
+            render json: nil
+        else
+            customer = Customer.find(id)
+            render json: customer
+        end
     end
     
     private

@@ -7,7 +7,7 @@ function Navbar() {
   const [customerId, setCustomerId] = useState("");
 
   useEffect(() => {
-    fetch("/customer-session-id").then((r) => {
+    fetch("/session").then((r) => {
       if (r.ok) {
         r.json().then((customerId) => setCustomerId(customerId));
       }
