@@ -16,13 +16,14 @@ function CreateAppointment() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("/session").then((r) => {
-      if (r.ok) {
-        r.json().then((customer) => setCustomerId(customer.id));
-      }
-    });
+    fetch("/session")
+      .then((response) => response.json())
+      .then((data) => setCustomerId(data.id))
+      .catch((err) => {
+        console.log("29 ===>" + err);
+        navigate("/login");
+      });
 
-    console.log(customerId.id);
     fetch("/manicurists")
       .then((response) => response.json())
       .then((data) => setManicurists(data));
