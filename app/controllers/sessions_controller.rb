@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
     def destroy
 		return render json: {errors: ["Not authorized"]}, status: :unauthorized unless session.include? :customer_id
 		session.delete :customer_id
-		head :no_content
+		head :no_content, status: :ok
+
 	end
 end
