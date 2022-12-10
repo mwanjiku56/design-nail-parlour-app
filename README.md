@@ -42,5 +42,5 @@ To see the application live you run the command:
   [http://localhost:4000](http://localhost:4000)
 
 
-Deployed front end link:https://nail-parlour.vercel.app/
+Deployed front end link:https://design-nail-parlour.vercel.app/
 
