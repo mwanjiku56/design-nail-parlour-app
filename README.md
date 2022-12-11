@@ -44,3 +44,16 @@ To see the application live you run the command:
 
 Deployed front end link:https://design-nail-parlour.vercel.app/
 
+
+## COMPLETE MVPS
+A user is able login or create an account.
+A user can see appointments,book, update or delete appointment while on local host.
+A user is also able to see available manicurists
+
+
+## Challenges
+
+An Error when communicating with the server.The request to post data or request data is being received but data is not sent back when working on cloud.
+## Future plans
+To Ensure that the communication of the server and client on cloud is seamless.
+To create a feature where a user can recieve a notification when the appointment time is close.
