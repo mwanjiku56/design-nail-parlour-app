@@ -17,7 +17,6 @@ function CreateAppointment() {
       .then((response) => response.json())
       .then((data) => setCustomerId(data.id))
       .catch((err) => {
-        console.log("29 ===>" + err);
         navigate("/login");
       });
 

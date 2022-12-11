@@ -23,7 +23,6 @@ function Appointments() {
 
   function handleDelete(e) {
     e.preventDefault();
-    console.log("==========>" + appointmentId);
     fetch("/appointments/" + appointmentId, {
       method: "DELETE",
       headers: {
@@ -36,7 +35,6 @@ function Appointments() {
 
   const handleDeletes = (index, e) => {
     e.preventDefault();
-    console.log("==========>" + index);
     fetch("/appointments/" + index, {
       method: "DELETE",
       headers: {
