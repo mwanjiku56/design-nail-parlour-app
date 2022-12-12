@@ -1,19 +1,15 @@
 class SessionsController < ApplicationController
     # skip_before_action :authorize, only: :create
 
-    def create
-        customer = Customer.find_by(email: params[:email])
-        if customer != nill
-          if params[:password] == customer.password
-            session[:customer_id] = customer.id
-            render json: customer, status: :created
-          else
-            render json: { errors: ["Invalid username or password"] }, status: :unauthorized
-          end
-        else
-          render json: { errors: ["Invalid username or password"] }, status: :unauthorized
-        end
-    end
+  def create
+      @customer = Customer.find_by(email: params[:email],password: params[:password])
+      if @customer != nil
+        session[:customer_id] = @customer.id
+        render json: @customer, status: :created
+      else
+        render json: { errors: ["Invalid username or password"] }, status: :unauthorized
+      end
+  end
 
     
     def destroy

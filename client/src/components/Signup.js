@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 // import "./Signup.css";
 
 function Signup({ onLogin }) {
   const [fname, setFname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+  const navigate = useNavigate();
+
   function handleSubmit(e) {
     e.preventDefault();
     fetch("/signup", {
@@ -19,8 +22,15 @@ function Signup({ onLogin }) {
         password,
         email,
       }),
-    }).then((r) => r.json())
-    .then(onLogin);
+    }).then((r) => {
+      if (r.ok) {
+        navigate("/login");
+      } else {
+        r.json().then((err) => {
+          console.log(err);
+        });
+      }
+    });
   }
 
   return (
@@ -99,7 +109,9 @@ function Signup({ onLogin }) {
                 </button>
                 <p className="text-center">OR</p>
                 <Link to="/login">
-                <button type="button" className="btn btn-primary">Log In</button>
+                  <button type="button" className="btn btn-primary">
+                    Log In
+                  </button>
                 </Link>
               </div>
             </div>
