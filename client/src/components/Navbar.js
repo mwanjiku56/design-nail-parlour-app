@@ -4,8 +4,6 @@ import { NavLink, Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-  
-
   return (
     <header>
       <div className="menubar">
@@ -33,6 +31,16 @@ function Navbar() {
               >
                 {" "}
                 Our Services
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/appointments"
+                className={({ isActive }) =>
+                  isActive ? "link active" : "link"
+                }
+              >
+                Appointments
               </NavLink>
             </li>
             <li>
