@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
-    # before_action :authorize
+     
+
     def index
         appoint=Appointment.all 
         render json: appoint
