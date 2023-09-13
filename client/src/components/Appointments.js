@@ -15,23 +15,13 @@ function Appointments() {
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 */
+
+
   useEffect(() => {
     fetch("/appointments")
       .then((response) => response.json())
       .then((data) => setAppoint(data));
   }, []);
-
-  function handleDelete(e) {
-    e.preventDefault();
-    fetch("/appointments/" + appointmentId, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((r) => {
-      //window.location.reload(false);
-    });
-  }
 
   const handleDeletes = (index, e) => {
     e.preventDefault();
@@ -49,7 +39,7 @@ function Appointments() {
     <div className="row">
       <div className="card bg-light col-12">
         <article className="card-body mx-auto">
-          <h4 className="card-title mt-3 text-center">Appointment</h4>
+          <h4 className="card-title mt-3 text-center">Booking</h4>
         </article>
 
         <table className="table stripped">
@@ -62,7 +52,7 @@ function Appointments() {
               <th scope="col">
                 <Link to="/create-appointment">
                   <button type="submit" className="btn btn-success">
-                    Book Appointment
+                    Make a Booking
                   </button>
                 </Link>
               </th>
@@ -71,7 +61,7 @@ function Appointments() {
           <tbody>
             {appoint.length < 1 ? (
               <tr>
-                <td colSpan="3">No Appointments Available</td>
+                <td colSpan="3">No Bookings Available</td>
               </tr>
             ) : (
               appoint.map((data) => (
@@ -86,7 +76,7 @@ function Appointments() {
                       <div className="col-sm-6">
                         <Link to={`/update-appointment/${data.id}`}>
                           <button type="submit" className="btn btn-success">
-                            Update Appointment
+                            Update Your Booking
                           </button>
                         </Link>
                       </div>

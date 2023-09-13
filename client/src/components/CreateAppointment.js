@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Login from "../components/Login";
-
 
 function CreateAppointment() {
   const [customerId, setCustomerId] = useState("");
@@ -45,6 +44,7 @@ function CreateAppointment() {
         r.json().then((user) => {
           setSuccess(user);
           navigate("/appointments");
+          
         });
       } else {
         r.json().then((err) => {
@@ -59,7 +59,7 @@ function CreateAppointment() {
       <div className="row">
         <div className="card bg-light col-12">
           <article className="card-body mx-auto">
-            <h4 className="card-title mt-3 text-center">Create Appointment</h4>
+            <h4 className="card-title mt-3 text-center">Make a Booking</h4>
           </article>
           {/*=========================================================== */}
           <form onSubmit={handleSubmit}>
@@ -123,7 +123,7 @@ function CreateAppointment() {
               <div className="col-sm-11"></div>
               <div className="col-sm-1">
                 <button type="submit" className="btn btn-primary">
-                  Create
+                  Book
                 </button>
               </div>
             </div>

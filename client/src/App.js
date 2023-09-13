@@ -13,6 +13,8 @@ import Review from "./components/Review";
 import CreateAppointment from "./components/CreateAppointment";
 import UpdateAppointment from "./components/UpdateAppointment";
 import Logout from "./components/Logout";
+import Footer from "./components/Footer";
+import OurServices from "./components/OurServices";
 
 function App() {
   return (
@@ -21,6 +23,9 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+        </Routes>
+        <Routes>
+          <Route path="/ourservices" element={<OurServices />} />
         </Routes>
         <Routes>
           <Route path="/signup" element={<Signup />} />
@@ -55,6 +60,8 @@ function App() {
             element={<UpdateAppointment />}
           />
         </Routes>
+
+        <Footer />
       </BrowserRouter>
     </div>
   );
