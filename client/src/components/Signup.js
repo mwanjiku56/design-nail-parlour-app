@@ -107,12 +107,12 @@ function Signup({ onLogin }) {
                 <button type="submit" className="btn btn-primary">
                   Create Account
                 </button>
-                <p className="text-center">OR</p>
-                <Link to="/login">
+                {/* <p className="text-center">OR</p> */}
+                {/* <Link to="/login">
                   <button type="button" className="btn btn-primary">
                     Log In
                   </button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </form>
