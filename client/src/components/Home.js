@@ -46,7 +46,7 @@ function Home() {
       <div className="container grey">
         <div className="row">
           <div className="col-md-12">
-            <h3>About NailPro</h3>
+            <h3>About Us</h3>
             <p>
               NailPro is a beauty spa that helps your nails remain glammed in
               Nairobi County. <br />
@@ -55,114 +55,79 @@ function Home() {
               walks of life.
             </p>
           </div>
+
+          <div className="cards">
+            <img
+              className="card-img-top"
+              src="https://img.freepik.com/free-vector/woman-pedicure-salon-nails-care-procedure_33099-1904.jpg?size=626&ext=jpg&uid=R97929084&ga=GA1.2.704823238.1693896145&semt=ais"
+              alt=""
+            />
+            <div className="card-body">
+              <h4 className="card-title">Exquisute space</h4>
+              {/* <p className="card-text ">
+                Experience a dedicated end-to-end service. Offering the best
+                event management within the city, get tickets and get to attend
+                events considered highly in the market{" "}
+              </p> */}
+            </div>
+          </div>
         </div>
 
         <div className="row">
-          <div className="col-md-4">
-            <div className="card">
-              <img
-                className="card-img-top"
-                src="https://media.istockphoto.com/id/1358219358/photo/woman-entrepreneur-at-seminar-giving-presentation.jpg?b=1&s=170667a&w=0&k=20&c=vjZ4nVfRDVx9v8riD6d5D4RkBCs1D36Cyn3RXPvkPeE="
-                alt="Banner"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Technology</h5>
-                <p className="card-text ">
-                  Tech is the future! At Eventify we hook you up with all tech
-                  related events such as Hackathons.We give you all the
-                  information that helps you prepare for tech events. We ensure
-                  that we give best prices for anyone attending our events.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4">
-            <div className="card">
-              <img
-                className="card-img-top"
-                src="https://media.istockphoto.com/id/1358219358/photo/woman-entrepreneur-at-seminar-giving-presentation.jpg?b=1&s=170667a&w=0&k=20&c=vjZ4nVfRDVx9v8riD6d5D4RkBCs1D36Cyn3RXPvkPeE="
-                alt="Banner"
-              />
-              <div className="card-body">
-                <h5 className="card-title">Business</h5>
-                <p className="card-text ">
-                  Business? We got you! Eventify helps you sell your business,
-                  in business events. We ensure to hook you up with the best
-                  where you can get investors This gives you a networking
-                  platform as well as marketing. Sell your business and network!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-md-4">
-            <div className="card">
-              <img
-                className="card-img-top"
-                src="https://media.istockphoto.com/id/1358219358/photo/woman-entrepreneur-at-seminar-giving-presentation.jpg?b=1&s=170667a&w=0&k=20&c=vjZ4nVfRDVx9v8riD6d5D4RkBCs1D36Cyn3RXPvkPeE="
-                alt="Banner"
-              />
-              <div className="card-body">
-                <h5 className="card-title">Music</h5>
-                <p className="card-text ">
-                  Eventify ensures that you are updated on all your best
-                  artist's performances. We make sure that all the music event
-                  all around the year are on our app. This includes making
-                  tickets timely so you dont miss out. You are welcome.
-                </p>
-              </div>
-            </div>
-          </div>
           <div className="port">
             <h3>Our Work Portfolio</h3>
             <p>
               Our portfolio and experiences are vast. However, one fact remains
-              true for all our events creating a perfect experience for your
-              guests is our top priority. Whatever your event requirements,
-              budget or location, Eventify guarantees maximum engagement and an
-              unforgettable guest experience.
+              true for all our services creating a perfect experience for you is
+              our top priority. Whatever your nail needs, budget we got you.
+              NailPro guarantees maximum engagement and an unforgettable client
+              experiences. You will love our services
             </p>
             <div className="row">
               <div className="col-md-3 col-sm-4">
                 <ul>
-                  <li>Meetings</li>
-                  <li>Hybrid & Virtual Events</li>
-                  <li>Private Dining</li>
-                  <li>Drinks Receptions</li>
-                  <li>Graduation parties</li>
+                  <li>Basic Manicure </li>
+                  <li>Gel Manicure</li>
+                  <li>Basic pedicure</li>
+                  <li>Gel pedicure</li>
+                  <li>Cuticle Care</li>
                 </ul>
               </div>
               <div className="col-md-3 col-sm-4">
                 <ul>
-                  <li>Christmas & Seasonal Parties</li>
-                  <li>Awards Ceremonies</li>
-                  <li>Team Building</li>
-                  <li>Exhibitions</li>
-                  <li>Networking Events</li>
+                  <li>Nail Trim & Shape</li>
+                  <li>Paraffin Treatment</li>
+                  <li>Sugar Scrub</li>
+                  <li>Foot Scrub</li>
+                  <li>Callus Treatment</li>
                 </ul>
               </div>
               <div className="col-md-3 col-sm-4">
                 <ul>
-                  <li>Wellness Occasions</li>
-                  <li>Corporate Hospitality</li>
-                  <li>Training Sessions</li>
-                  <li>Launch Events</li>
-                  <li>Private Functions</li>
+                  <li>Acrylic Fill</li>
+                  <li>Acrylic Overlay</li>
+                  <li>Color Powder Fill</li>
+                  <li>Valentino Fill</li>
+                  <li>Hard Gel Full Set Tips</li>
                 </ul>
               </div>
               <div className="col-md-3 col-sm-4">
                 <ul>
-                  <li>Event coordination</li>
-                  <li>Event reporting </li>
-                  <li>Guest management</li>
-                  <li>Events Ticketing</li>
-                  <li>Event rehearsal</li>
+                  <li>Custom Design</li>
+                  <li>Deep French </li>
+                  <li>Gel Ombre </li>
+                  <li>Chrome, Hologram</li>
+                  <li>Light Elegance Rock Star Glitter</li>
                 </ul>
               </div>
             </div>
 
             <div className="col-md-3"></div>
+            <img
+              className="card-img-top"
+              src="https://img.freepik.com/free-photo/hands-with-beautiful-nails_23-2149936852.jpg?size=626&ext=jpg&uid=R97929084&ga=GA1.1.704823238.1693896145&semt=ais"
+              alt=""
+            />
           </div>
         </div>
       </div>
